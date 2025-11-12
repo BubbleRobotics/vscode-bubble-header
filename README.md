@@ -1,41 +1,44 @@
-<img
-  src="https://raw.githubusercontent.com/kube/vscode-42header/master/42.png" 
-  width=128>
 
-> **Searching for Maintainer.**
-> 
-> This project was done 7 years ago, which is an eternity relative to VSCode Lifespan.
-> I don't have time to maintain this, but I see a lot of people doing Pull Requests for it, or creating issues.
-> 
-> As there are no Unit Tests and no CI/CD, it makes it even harder to check for issues and PRs.
->
-> What I'd like to do is to give ownership to an "official" 42 organization on GitHub, where a group of students could maintain and update this project themselves.
->
-> If you are interested in such a thing, please ping me.
+# Bubble Fork
 
-# 42 Header for VSCode
+This is a fork of the 42-header vs code extension. To install it: 
+
+## Build it 
+
+```
+ npm install -g @vscode/vsce
+```
+
+```
+ npm install       # install dependencies
+ vsce package --no-yarn     # package the extension as .vsix
+```
+
+# Insall it
+
+In VS Code:
+
+- Open Extensions view (Ctrl+Shift+X or Cmd+Shift+X)
+- Click the ⋯ (three dots) menu at the top
+- Select Install from VSIX…
+- Choose your .vsix file
+
+
+# BR Header for VSCode
 
 This extension provides the 42 header integration in VS Code.
 
 ```bash
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    vscode-42header                                    :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: kube <hello@kube.io>                       +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2013/11/18 13:37:42 by kube              #+#    #+#              #
-#    Updated: 2016/09/18 13:11:04 by kube             ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-```
-
-## Install
-
-Launch Quick Open with <kbd>⌘</kbd>+<kbd>P</kbd> and enter
-```
-ext install 42header
+# ***************************************************************************** #
+#                                                     ########  ########        #
+#    file.yaml                                        ##     ## ##     ##       #
+#                                                     ##     ## ##     ##       #
+#    By: ubuntu <ubuntu@bubble-robotics.com>          ########  ########        #
+#                                                     ##     ## ##   ##         #
+#    Created: 2025/11/12 10:12:28 by ubuntu           ##     ## ##    ##        #
+#    Updated: 2025/11/12 10:12:28 by ubuntu           ########  ##     ##       #
+#                                                                               #
+# ***************************************************************************** #
 ```
 
 ## Usage
@@ -46,7 +49,6 @@ ext install 42header
 
 Header is automatically updated on save.
 
-
 ## Configuration
 
 Default values for **username** and **email** are imported from environment variables.
@@ -55,15 +57,10 @@ To override these values, specify these properties in *User Settings* :
 
 ```ts
 {
-  "42header.username": string,
-  "42header.email": string
+  "BRheader.username": string,
+  "BRheader.email": string
 }
 ```
-
-
-## Issues
-
-In case of a bug, or missing feature, please create a [Github Pull Request](https://github.com/kube/vscode-42header/pulls).
 
 ## License
 
