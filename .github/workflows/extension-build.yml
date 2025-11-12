@@ -18,13 +18,13 @@ jobs:
     steps:
 
     - name: Checkout the code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v5
 
     - name: Add nuget to PATH
-      uses: nuget/setup-nuget@v1
+      uses: nuget/setup-nuget@v2
 
     - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@v1.1.3
 
     - name: Restore
       run: nuget restore
@@ -32,7 +32,7 @@ jobs:
     - name: Build
       run: msbuild /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v5
       with:
         name: BR-header.vsix
         path: BR-header\bin\Release\BR-header.vsix
