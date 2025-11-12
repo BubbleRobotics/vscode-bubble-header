@@ -1,0 +1,39 @@
+name: Extension Build
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+on:
+  push:
+    branches: [ "main" ]
+    # Publish semver tags as releases.
+    tags: [ 'v*.*.*' ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+
+    - name: Checkout the code
+      uses: actions/checkout@v2
+
+    - name: Add nuget to PATH
+      uses: nuget/setup-nuget@v1
+
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Restore
+      run: nuget restore
+
+    - name: Build
+      run: msbuild /p:configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=normal
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: BR-header.vsix
+        path: BR-header\bin\Release\BR-header.vsix
