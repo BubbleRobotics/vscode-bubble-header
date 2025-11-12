@@ -1,10 +1,10 @@
 {
-  "name": "42header",
-  "displayName": "42 Header",
-  "description": "42 header for VSCode : www.42.fr",
+  "name": "BR-header",
+  "displayName": "BR Header",
+  "description": "BR header for VSCode",
   "version": "0.42.7",
-  "publisher": "kube",
-  "icon": "42.png",
+  "publisher": "bubble-robotics",
+  "icon": "BR_Logo.avif",
   "repository": {
     "type": "git",
     "url": "https://github.com/kube/vscode-42header"
@@ -27,26 +27,26 @@
   "contributes": {
     "configuration": {
       "properties": {
-        "42header.username": {
+        "BRheader.username": {
           "type": "string",
-          "description": "Username to use in 42 headers"
+          "description": "Username to use in BR headers"
         },
-        "42header.email": {
+        "BRheader.email": {
           "type": "string",
-          "description": "Email address to use in 42 headers"
+          "description": "Email address to use in BR headers"
         }
       }
     },
     "commands": [
       {
-        "command": "42header.insertHeader",
-        "title": "Insert 42 header",
+        "command": "BRheader.insertHeader",
+        "title": "Insert BR header",
         "when": "editorTextFocus"
       }
     ],
     "keybindings": [
       {
-        "command": "42header.insertHeader",
+        "command": "BRheader.insertHeader",
         "key": "ctrl+alt+h",
         "mac": "cmd+alt+h",
         "when": "editorTextFocus"
@@ -61,7 +61,7 @@
   "devDependencies": {
     "@types/node": "^6.0.45",
     "typescript": "^2.0.3",
-    "vscode": "^1.0.0"
+    "vscode": "^1.1.37"
   },
   "dependencies": {
     "moment": "^2.15.0"
